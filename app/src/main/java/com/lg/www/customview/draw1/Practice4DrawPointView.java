@@ -2,9 +2,13 @@ package com.lg.www.customview.draw1;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
+
+import com.lg.www.customview.PxDpUtil;
 
 public class Practice4DrawPointView extends View {
 
@@ -20,6 +24,8 @@ public class Practice4DrawPointView extends View {
         super(context, attrs, defStyleAttr);
     }
 
+    private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -27,5 +33,12 @@ public class Practice4DrawPointView extends View {
 //        练习内容：使用 canvas.drawPoint() 方法画点
 //        一个圆点，一个方点
 //        圆点和方点的切换使用 paint.setStrokeCap(cap)：`ROUND` 是圆点，`BUTT` 或 `SQUARE` 是方点
+        mPaint.setColor(Color.BLACK);
+        mPaint.setStrokeCap(Paint.Cap.ROUND);
+        mPaint.setStrokeWidth(PxDpUtil.dip2px(getContext(), 20));
+        canvas.drawPoint(200, 150, mPaint);
+
+        mPaint.setStrokeCap(Paint.Cap.BUTT);
+        canvas.drawPoint(400, 150, mPaint);
     }
 }
