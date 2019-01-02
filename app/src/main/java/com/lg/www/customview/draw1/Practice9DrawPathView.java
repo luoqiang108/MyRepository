@@ -34,7 +34,7 @@ public class Practice9DrawPathView extends View {
         mPath.addArc(new RectF(200, 200, 400, 400), -225, 225); // 半径 100 的扇形 225度，从-225开始
         mPath.arcTo(new RectF(400, 200, 600, 400), -180, 225, false); // false 不留下移笔痕迹
         mPath.lineTo(400, 542); // 从原点画直线到坐标400,542
-        //这里有个问题没想明白，留着以后理解：这段代码在我的理解里绘制出来的心形应该是少了左下直线部分的，但是为什么实际是一个完整的心形呢？
+        //这里有个问题没想明白：这段代码在我的理解里绘制出来的心形应该是少了左下直线部分的，但是为什么实际是一个完整的心形呢？？？
         canvas.drawPath(mPath, mPaint);
     }
 }

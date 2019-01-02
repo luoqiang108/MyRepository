@@ -24,7 +24,7 @@ public class Practice10HistogramView extends View {
         super(context, attrs, defStyleAttr);
     }
 
-    Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
     @Override
     protected void onDraw(Canvas canvas) {
